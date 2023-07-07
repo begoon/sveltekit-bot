@@ -4,8 +4,9 @@ import { bot } from "./bot";
 export async function GET({ url }) {
     const me = url.href.replace("http://", "https://");
     console.log("me", me);
-    console.log(await bot.setWebHook(me));
-    return json({ me, status: await bot.setWebHook(me) });
+    const wh = await bot.setWebHook(me);
+    console.log(wh);
+    return json({ me, wh });
 }
 
 export async function POST({ request, url }) {
