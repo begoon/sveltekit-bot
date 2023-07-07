@@ -5,7 +5,7 @@ export async function GET({ url }) {
     const me = url.href.replace("http://", "https://");
     console.log("me", me);
     console.log(await bot.setWebHook(me));
-    return json({ me });
+    return json({ me, status: await bot.setWebHook(me) });
 }
 
 export async function POST({ request, url }) {
