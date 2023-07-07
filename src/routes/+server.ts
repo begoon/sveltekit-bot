@@ -9,7 +9,7 @@ export async function GET({ url }) {
     return json({ me, wh });
 }
 
-export async function POST({ request, url }) {
+export async function POST({ request }) {
     const data = await request.json();
     console.log(data);
     bot.processUpdate(data);
