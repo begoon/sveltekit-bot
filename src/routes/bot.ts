@@ -16,16 +16,7 @@ export const history: any[] = [];
 bot.on("message", async (msg) => {
     try {
         await bot.sendMessage(msg.chat.id, msg.text + ", and?");
-        if (msg.text === "glider") {
-            await bot.sendPhoto(
-                msg.chat.id,
-                "https://upload.wikimedia.org/wikipedia/commons/4/45/Glider.svg"
-            );
-        }
-        history.push({
-            when: new Date(),
-            msg,
-        });
+        history.push({ when: new Date(), msg });
     } catch (e) {
         console.error(e);
     }
