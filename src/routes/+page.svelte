@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
+    import { invalidate } from "$app/navigation";
 
     export let data;
     async function refresh() {
-        await goto("/");
+        await invalidate("bot:refresh");
     }
 
     const last_error_date = new Date(
