@@ -19,4 +19,10 @@ bot.on("message", (msg) => {
         msg,
     });
     bot.sendMessage(msg.chat.id, msg.text + ", and?");
+    if (msg.text === "glider") {
+        bot.sendPhoto(
+            msg.chat.id,
+            "https://upload.wikimedia.org/wikipedia/commons/4/45/Glider.svg"
+        );
+    }
 });
