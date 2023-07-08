@@ -6,9 +6,9 @@
         await invalidate("bot:refresh");
     }
 
-    const last_error_date = new Date(
-        (data.webhook.last_error_date as number) * 1000
-    ).toISOString();
+    const last_error_date =
+        data.webhook.last_error_date &&
+        new Date((data.webhook.last_error_date as number) * 1000).toISOString();
 </script>
 
 <button on:click={refresh}>refresh</button>

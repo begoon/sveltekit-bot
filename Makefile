@@ -1,4 +1,4 @@
-HOST=https://sveltekit-bot.vercel.app
+HOST?=https://sveltekit-bot.vercel.app
 
 all:
 
