@@ -6,7 +6,9 @@
         await goto("/");
     }
 
-    const last_error_date = new Date(data.webhook.last_error_date).toISOString();
+    const last_error_date = new Date(
+        (data.webhook.last_error_date as number) * 1000
+    ).toISOString();
 </script>
 
 <button on:click={refresh}>refresh</button>
@@ -21,7 +23,6 @@
     {#each data.history as { when, msg }}
         <li>
             {new Date(when).toISOString()} - {JSON.stringify(msg.text)}
-            {#if data.webho}
         </li>
     {/each}
 </ul>
