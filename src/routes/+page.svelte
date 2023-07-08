@@ -5,14 +5,23 @@
     async function refresh() {
         await goto("/");
     }
+
+    const last_error_date = new Date(data.webhook.last_error_date).toISOString();
 </script>
 
 <button on:click={refresh}>refresh</button>
 <pre>
 {JSON.stringify(data.webhook, null, 2)}
 </pre>
+{#if last_error_date}
+    <p>Last error: {last_error_date}</p>
+{/if}
+
 <ul>
     {#each data.history as { when, msg }}
-        <li>{new Date(when).toISOString()} - {JSON.stringify(msg.text)}</li>
+        <li>
+            {new Date(when).toISOString()} - {JSON.stringify(msg.text)}
+            {#if data.webho}
+        </li>
     {/each}
 </ul>

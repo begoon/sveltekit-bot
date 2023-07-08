@@ -1,3 +1,5 @@
+import { json } from "@sveltejs/kit";
+
 export async function GET({}) {
-    return new Response("pinged", { status: 200 });
+    return json({ status: "pinged" });
 }
