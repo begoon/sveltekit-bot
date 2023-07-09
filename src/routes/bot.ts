@@ -30,6 +30,13 @@ bot.on("message", async (msg) => {
                 ],
             },
         });
+        if (msg.text === "image") {
+            const image = await bot.sendPhoto(
+                msg.chat.id,
+                "https://i.ibb.co/SJ5STXr/640x360.jpg"
+            );
+            console.log(image);
+        }
         history.push({ when: new Date(), msg });
     } catch (e) {
         console.error(e);
