@@ -1,6 +1,7 @@
+import type { RequestEvent } from "./$types";
 import { bot } from "./bot";
 
-export async function POST({ request }) {
+export async function POST({ request }: RequestEvent) {
     try {
         const data = await request.json();
         console.log(data);
